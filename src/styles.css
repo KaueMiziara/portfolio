@@ -1,3 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
 
-@import "tailwindcss";
+@theme {
+  --color-void-navy: #0f172a;
+  --color-armor-plate: #1e293b;
+  --color-polished-silver: #e2e8f0;
+  --color-chainmail: #94a3b8;
+  --color-rune-blue: #38bdf8;
+  --color-glacial-white: #f0f9ff;
+
+  --font-gothic: 'Manufacturing Consent', system-ui;
+  --font-roman: 'Cinzel', serif;
+  --font-modern: 'Inter', sans-serif;
+  --font-tech: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--color-void-navy);
+  color: var(--color-polished-silver);
+  font-family: var(--font-gothic);
+}
