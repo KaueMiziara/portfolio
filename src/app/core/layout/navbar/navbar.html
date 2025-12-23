@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<nav
+  class="sticky top-0 z-50 w-full flex justify-center pt-6 pb-8 md:pb-12 bg-gradient-to-b from from-void-navy via-void-navy/90 to to-transparent pointer-events-none"
+>
+  <div
+    class="pointer-events-auto flex items-center w-full px-6 py-3 md:px-12 gap-6 md:gap-8 overflow-x-auto no-scrollbar whitespace-nowrap justify-start md:justify-center bg-void-navy/95 backdrop-blur-md border-y border-chainmail shadow-lg shadow-void-navy/50"
+  >
+    <app-navbar-item label="About" route="/" />
+    <div class="separator">♦</div>
+    <app-navbar-item label="R&D" labelDesktop="Research & Development" route="/research" />
+    <div class="separator">♦</div>
+    <app-navbar-item label="Projects" route="/projects" />
+    <div class="separator">♦</div>
+    <app-navbar-item label="Competitions" route="/competitions" />
+    <div class="separator">♦</div>
+    <app-navbar-item label="Community" labelDesktop="Events & Community" route="/community" />
+  </div>
+</nav>

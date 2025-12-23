@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@reference '../../../../styles.css';
+
+@layer utilities {
+  .separator {
+    @apply hidden md:block text-xs text-chainmail/40 select-none;
+  }
+}
