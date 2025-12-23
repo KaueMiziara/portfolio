@@ -1,0 +1,13 @@
+@import '../../../styles.css';
+
+.hero {
+  @apply text-center mb-16;
+}
+
+.hero h1 {
+  @apply font-gothic text-5xl/tight md:text-7xl/tight text-polished-silver font-normal mb-1 text-shadow-[0_4px_15px_rgb(0_0_0_/_0.8)] tracking-wider;
+}
+
+.hero-subtitle {
+  @apply font-roman text-base md:text-xl text-rune-blue mb-8 uppercase;
+}
