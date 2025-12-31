@@ -61,12 +61,12 @@
       @if (data().link) {
         <div class="pt-2 border-t border-chainmail/10">
           <a
-            [href]="data()?.link?.url"
+            [href]="data().link?.url"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-rune-blue hover:text-white transition-colors text-xs uppercase tracking-wider font-bold group/link"
           >
-            {{ data()?.link?.text }}
+            {{ data().link?.text }}
             <span class="transition-transform group-hover/link:translate-x-1">→</span>
           </a>
         </div>
