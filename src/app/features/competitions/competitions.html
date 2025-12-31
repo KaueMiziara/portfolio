@@ -1,1 +1,18 @@
-<p>competitions works!</p>
+<section class="animate-fade-in space-y-12 pb-12">
+  <div class="text-center px-4">
+    <h2 class="font-roman text-4xl md:text-5xl text-polished-silver mb-2 text-shadow-lg">
+      Competitions
+    </h2>
+    <p class="font-tech text-xs md:text-sm text-rune-blue uppercase tracking-widest opacity-80">
+      &lang; Events and Hackathons &rang;
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto px-2 md:px-0 items-start"
+  >
+    @for (project of projects(); track project.id) {
+      <app-project-card [data]="project"></app-project-card>
+    }
+  </div>
+</section>

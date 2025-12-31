@@ -1,6 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProjectCard } from '../../shared/components/project-card/project-card';
-import { Project } from '../../core/models/project.model';
 import { ProjectService } from '../../core/services/project.service';
 
 @Component({
@@ -11,6 +10,5 @@ import { ProjectService } from '../../core/services/project.service';
 })
 export class Research {
   private projectService = inject(ProjectService);
-
   projects = this.projectService.researchProjects;
 }
