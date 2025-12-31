@@ -1,39 +1,51 @@
 <div
-  class="quantum-card group relative h-full bg-armor-plate p-6 transition-all duration-300 ease-out"
+  class="shield-border group relative h-full transition-all duration-300 ease-out cursor-default"
   [class.gold-variant]="variant() === 'gold'"
   [class.is-open]="isOpen()"
   (click)="toggle()"
 >
-  <div class="flex justify-between items-start mb-4">
-    <h3
-      class="font-roman text-xl text-polished-silver group-hover:text-rune-blue transition-colors"
-    >
-      {{ title() }}
-    </h3>
+  <div class="shield-inner bg-armor-plate h-full w-full flex flex-col relative overflow-hidden">
     <div
-      class="font-roman text-2xl text-chainmail group-hover:text-rune-blue transition-colors icon-glow"
-    >
-      {{ icon() }}
-    </div>
-  </div>
+      class="absolute inset-0 opacity-5 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"
+    ></div>
 
-  <div class="text-chainmail text-sm md:text-base mb-2">
-    <ng-content></ng-content>
-  </div>
-
-  <div
-    class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out"
-    [class.grid-rows-[1fr]]="isOpen()"
-  >
-    <div class="overflow-hidden">
-      <div
-        class="h-px w-full bg-chainmail/20 my-3 opacity-0 group-hover:opacity-10 transition-opacity duration-300 delay-100"
-        [class.opacity-100]="isOpen()"
-      ></div>
-
-      <div class="text-sm text-chainmail/80 pb-2">
-        <ng-content select="[details]"></ng-content>
+    <div class="p-6 pb-12 z-10">
+      <div class="flex justify-between items-start mb-4 border-b border-chainmail/20 pb-2">
+        <h3
+          class="font-roman text-lg md:text-xl text-polished-silver group-hover:text-rune-blue transition-colors tracking-wide"
+        >
+          {{ title() }}
+        </h3>
+        <div
+          class="font-roman text-2xl text-chainmail group-hover:text-rune-blue transition-colors drop-shadow-md"
+        >
+          {{ icon() }}
+        </div>
       </div>
+
+      <div class="text-chainmail text-sm md:text-base leading-relaxed">
+        <ng-content></ng-content>
+      </div>
+
+      <div
+        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out mt-2"
+        [class.grid-rows-[1fr]]="isOpen()"
+      >
+        <div class="overflow-hidden">
+          <div
+            class="h-px w-full bg-gradient-to-r from-transparent via-rune-blue/50 to-transparent my-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+          <div class="text-sm text-chainmail/90">
+            <ng-content select="[details]"></ng-content>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-2 left-1/2 -translate-x-1/2 text-chainmail/20 group-hover:text-rune-blue/50 transition-colors text-xs"
+    >
+      ▼
     </div>
   </div>
 </div>

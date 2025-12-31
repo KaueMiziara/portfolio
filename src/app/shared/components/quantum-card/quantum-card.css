@@ -1,34 +1,38 @@
 @import 'tailwindcss';
 @import '../../../../styles.css';
 
-.quantum-card {
-  clip-path: polygon(
-    10px 0,
-    100% 0,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    0 100%,
-    0 10px
-  );
-
-  @apply border-l-[3px] border-r-[3px] border-chainmail;
+@theme {
+  --shield-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 50% 100%, 0 calc(100% - 30px));
 }
 
-.quantum-card:hover,
-.quantum-card.is-open {
-  @apply border-rune-blue -translate-y-1 shadow-[0_0_20px_rgba(56,189,248,0.15)];
+.shield-border {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 50% 100%, 0 calc(100% - 30px));
+
+  background: linear-gradient(135deg, var(--color-chainmail), var(--color-void-navy));
+
+  padding: 1px;
+}
+
+.shield-inner {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 50% 100%, 0 calc(100% - 30px));
+}
+
+.shield-border:hover,
+.shield-border.is-open {
+  background: linear-gradient(135deg, var(--color-rune-blue), var(--color-void-navy));
+
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+  transform: translateY(-5px);
 }
 
 .gold-variant {
-  @apply border-yellow-500/60;
+  background: linear-gradient(135deg, #ffd700, #854d0e);
 }
 .gold-variant:hover,
 .gold-variant.is-open {
-  @apply border-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.2)];
+  background: linear-gradient(135deg, #facc15, #a16207);
+  filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.4));
 }
 .gold-variant h3 {
   @apply text-yellow-100 group-hover:text-yellow-400;
-}
-.gold-variant .icon-glow {
-  @apply group-hover:text-yellow-400;
 }
