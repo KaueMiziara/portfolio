@@ -1,13 +1,46 @@
 @import '../../../styles.css';
 
 .hero {
-  @apply text-center mb-16;
+  @apply text-center mb-12 px-4;
 }
 
 .hero h1 {
-  @apply font-gothic text-5xl/tight md:text-7xl/tight text-polished-silver font-normal mb-1 text-shadow-[0_4px_15px_rgb(0_0_0_/_0.8)] tracking-wider;
+  @apply font-gothic text-5xl md:text-7xl text-polished-silver font-normal mb-2;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-  @apply font-roman text-base md:text-xl text-rune-blue mb-8 uppercase;
+  @apply font-roman text-base md:text-xl text-rune-blue uppercase tracking-[0.2em] opacity-90;
+}
+/* --- Custom Scrollbar --- */
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.3) rgba(30, 41, 59, 0.3);
+}
+
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.3); /* armor-plate/30 */
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(56, 189, 248, 0.3); /* rune-blue/30 */
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(56, 189, 248, 0.6);
+}
+
+/* --- Utilities --- */
+.tag-pill {
+  @apply px-2 py-1 bg-void-navy border border-chainmail/20 rounded text-xs text-chainmail whitespace-nowrap;
 }

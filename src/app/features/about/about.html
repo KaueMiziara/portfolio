@@ -1,49 +1,233 @@
-<section class="m-0 p-1 md:p-2">
+<section class="animate-fade-in space-y-12 pb-12">
+  <!-- === 1. HERO SECTION === -->
   <div class="hero">
     <h1>Kauê Miziara</h1>
     <div class="hero-subtitle">
-      &lang; Quantum Computing &vert; &dagger; &vert; Software Engineering &rang;
+      <!-- Mobile Layout: Stacked & Split -->
+      <div class="md:hidden flex flex-col gap-2">
+        <span>&lang; Quantum Computing &rang;</span>
+        <span>&lang; Software Engineering &rang;</span>
+      </div>
+
+      <!-- Desktop Layout: Single Line with Dagger -->
+      <div class="hidden md:block">
+        &lang; Quantum Computing <span class="text-chainmail mx-2">|</span> &dagger;
+        <span class="text-chainmail mx-2">|</span> Software Engineering &rang;
+      </div>
     </div>
   </div>
 
-  <app-quantum-card title="Education">
-    <ul class="space-y-2">
-      <li>BEng Computer Engineering</li>
-      <li class="text-xs">Expected 2027</li>
-    </ul>
-  </app-quantum-card>
-
-  <app-quantum-card title="Medical QML" icon="§">
-    <div class="flex gap-2 mb-2 no-scrollbar overflow-x-auto">
-      <app-quantum-tag tag="Qiskit" />
-      <app-quantum-tag tag="Qiskit" />
-      <app-quantum-tag tag="Qiskit" />
-      <app-quantum-tag tag="Qiskit" />
-      <app-quantum-tag tag="Qiskit" />
-      <app-quantum-tag tag="Qiskit" />
-      <app-quantum-tag tag="Qiskit" />
-    </div>
-    <p>Investigation into Quantum Neural Networks.</p>
-
-    <div details>
-      <p><strong>Methodology:</strong> Used VQC to reduce dimensionality...</p>
-      <a href="#" class="underline text-rune-blue">View Paper</a>
-    </div>
-  </app-quantum-card>
-
-  <div>
-    <h3>Trajectory Briefing</h3>
+  <!-- === 2. TRAJECTORY BRIEFING === -->
+  <div
+    class="max-w-4xl mx-auto bg-armor-plate/30 border-l-2 border-rune-blue p-6 md:p-8 rounded-r-lg backdrop-blur-sm"
+  >
+    <h3 class="font-roman text-xl text-polished-silver mb-4 flex items-center gap-2">
+      <span class="text-rune-blue">►</span> Trajectory Briefing
+    </h3>
+    <p class="text-chainmail leading-relaxed font-modern text-sm md:text-base">
+      Computer Engineering Undergraduate with a focus on
+      <strong class="text-polished-silver">Quantum Algorithms (VQE, DFT)</strong> and Software
+      Architecture. Merging the rigidity of backend development (Go, SQL) with the probabilistic
+      nature of quantum mechanics.
+    </p>
+    <p class="text-rune-blue font-tech text-xs mt-4 tracking-wider">
+      // CURRENT STATUS: QUANTUM INTERN
+    </p>
   </div>
 
-  <div>
-    <div>
-      <h3>Programming Languages</h3>
-    </div>
-    <div>
-      <h3>Languages</h3>
-    </div>
-    <div>
-      <h3>Education & Certificates</h3>
-    </div>
+  <!-- === 3. THE SHIELD GRID === -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto px-2 md:px-0 items-start"
+  >
+    <!-- CARD: EDUCATION -->
+    <app-quantum-card title="Education" icon="†">
+      <div class="flex items-start gap-3">
+        <div class="mt-1 text-rune-blue">♦</div>
+        <div>
+          <div class="text-polished-silver font-bold">B.Sc. Computer Engineering</div>
+          <div class="text-xs text-chainmail uppercase tracking-wider">Expected Dec 2027</div>
+        </div>
+      </div>
+
+      <div details>
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-4 mt-2">
+          <div>
+            <div class="text-sm text-polished-silver font-semibold">Undergraduate Researcher</div>
+            <div class="text-xs text-chainmail">Scientific Initiation (2025 - Present)</div>
+            <p class="text-xs text-chainmail/80 mt-1">
+              "Quantum Neural Networks for Medical Imaging"
+            </p>
+          </div>
+          <div>
+            <div class="text-sm text-polished-silver font-semibold">Academic Exchange</div>
+            <div class="text-xs text-chainmail">Planned for 2026</div>
+            <p class="text-xs text-chainmail/80 mt-1">
+              Seeking placement in DACH region (Germany/Switzerland/Austria).
+            </p>
+          </div>
+        </div>
+      </div>
+    </app-quantum-card>
+
+    <!-- CARD: CERTIFICATES -->
+    <app-quantum-card title="Certifications" icon="§">
+      <div class="flex items-start gap-3 mb-2">
+        <div class="mt-1 text-yellow-500">★</div>
+        <div>
+          <div class="text-polished-silver font-bold">IBM Quantum Developer</div>
+          <div class="text-xs text-chainmail">Certification Pending (Jan 2026)</div>
+        </div>
+      </div>
+      <div class="text-xs text-chainmail italic">+ 7 other certificates (Hover to view)</div>
+
+      <div details>
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-3 mt-2">
+          <div class="flex gap-2">
+            <span class="text-rune-blue text-xs mt-0.5">►</span>
+            <div>
+              <div class="text-sm text-polished-silver">Qiskit Global Summer School</div>
+              <div class="text-xs text-chainmail">IBM Quantum • 2025 (Excellence)</div>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <span class="text-rune-blue text-xs mt-0.5">►</span>
+            <div>
+              <div class="text-sm text-polished-silver">Qiskit Global Summer School</div>
+              <div class="text-xs text-chainmail">IBM Quantum • 2024 (Participation)</div>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <span class="text-chainmail text-xs mt-0.5">►</span>
+            <div>
+              <div class="text-sm text-polished-silver">Quantum Machine Learning</div>
+              <div class="text-xs text-chainmail">IBM Learning Badge • Advanced</div>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <span class="text-chainmail text-xs mt-0.5">►</span>
+            <div>
+              <div class="text-sm text-polished-silver">Qiskit Foundations</div>
+              <div class="text-xs text-chainmail">IBM Learning Badge • Intermediate</div>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <span class="text-chainmail text-xs mt-0.5">►</span>
+            <div>
+              <div class="text-sm text-polished-silver">Backend Engineering</div>
+              <div class="text-xs text-chainmail">Alura / Oracle ONE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-quantum-card>
+
+    <!-- CARD: LANGUAGES -->
+    <app-quantum-card title="Languages" icon="¶">
+      <div class="grid grid-cols-2 gap-2 text-sm">
+        <div class="px-2 py-1 border border-chainmail/20 rounded bg-void-navy/30 text-center">
+          <div class="text-polished-silver font-bold">Portuguese</div>
+          <div class="text-[10px] text-chainmail uppercase">Native</div>
+        </div>
+        <div class="px-2 py-1 border border-chainmail/20 rounded bg-void-navy/30 text-center">
+          <div class="text-polished-silver font-bold">English</div>
+          <div class="text-[10px] text-chainmail uppercase">C1 Fluent</div>
+        </div>
+      </div>
+
+      <div details>
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-2 mt-3">
+          <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
+            <span class="text-sm text-polished-silver">Portuguese</span>
+            <span class="text-xs text-rune-blue">Native</span>
+          </div>
+
+          <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
+            <span class="text-sm text-polished-silver">English</span>
+            <span class="text-xs text-rune-blue">C1 (Advanced)</span>
+          </div>
+
+          <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
+            <span class="text-sm text-polished-silver">Spanish</span>
+            <span class="text-xs text-rune-blue">B2 (Advanced)</span>
+          </div>
+
+          <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
+            <span class="text-sm text-polished-silver">German</span>
+            <span class="text-xs text-yellow-500">A2 (Active Learner)</span>
+          </div>
+
+          <div
+            class="flex justify-between items-center border-b border-chainmail/10 pb-1 opacity-75"
+          >
+            <span class="text-sm text-polished-silver">Dutch</span>
+            <span class="text-xs text-chainmail">A1 (Beginner)</span>
+          </div>
+        </div>
+      </div>
+    </app-quantum-card>
+
+    <!-- CARD: ARSENAL -->
+    <app-quantum-card title="Arsenal" icon="⚔">
+      <div class="flex flex-wrap gap-2 mb-2">
+        <span
+          class="px-2 py-1 bg-void-navy border border-rune-blue/30 rounded text-xs text-polished-silver"
+          >Qiskit</span
+        >
+        <span
+          class="px-2 py-1 bg-void-navy border border-chainmail/20 rounded text-xs text-chainmail"
+          >Go</span
+        >
+        <span
+          class="px-2 py-1 bg-void-navy border border-chainmail/20 rounded text-xs text-chainmail"
+          >Angular</span
+        >
+        <span class="text-xs text-chainmail self-center ml-1">+12 more</span>
+      </div>
+
+      <div details>
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-4 mt-2">
+          <div>
+            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">
+              Quantum Computing
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-pill">Qiskit (IBM)</span>
+              <span class="tag-pill">PennyLane (Xanadu)</span>
+              <span class="tag-pill">CUDA-Q (NVIDIA)</span>
+              <span class="tag-pill">Stim</span>
+              <span class="tag-pill">PyQuil</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">
+              Backend & Systems
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-pill">Go (Golang)</span>
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Node.js</span>
+              <span class="tag-pill">PostgreSQL</span>
+              <span class="tag-pill">Redis</span>
+              <span class="tag-pill">Docker</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">Frontend</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-pill">Angular</span>
+              <span class="tag-pill">Tailwind CSS</span>
+              <span class="tag-pill">TypeScript</span>
+              <span class="tag-pill">React</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-quantum-card>
   </div>
 </section>
