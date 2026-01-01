@@ -2,7 +2,7 @@ export interface Certification {
   title: string;
   issuer: string;
   date: string;
-  type: 'Certification' | 'Badge' | 'Degree' | 'Summer School';
+  type: 'Certification' | 'Badge' | 'Degree' | 'Certificate';
 
   highlight?: boolean;
   icon?: string;
