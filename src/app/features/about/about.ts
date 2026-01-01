@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { QuantumCard } from '../../shared/components/quantum-card/quantum-card';
+import { CertificationService } from '../../core/services/certification.service';
 
 @Component({
   selector: 'app-about',
@@ -7,4 +8,9 @@ import { QuantumCard } from '../../shared/components/quantum-card/quantum-card';
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {}
+export class About {
+  private certService = inject(CertificationService);
+
+  allCerts = this.certService.certifications;
+  highlightedCerts = computed(() => this.allCerts().filter((c) => c.highlight));
+}

@@ -1,15 +1,12 @@
 <section class="animate-fade-in space-y-12 pb-12">
-  <!-- === 1. HERO SECTION === -->
+  <!-- === HERO SECTION === -->
   <div class="hero">
     <h1>Kauê Miziara</h1>
     <div class="hero-subtitle">
-      <!-- Mobile Layout: Stacked & Split -->
       <div class="md:hidden flex flex-col gap-2">
         <span>&lang; Quantum Computing &rang;</span>
         <span>&lang; Software Engineering &rang;</span>
       </div>
-
-      <!-- Desktop Layout: Single Line with Dagger -->
       <div class="hidden md:block">
         &lang; Quantum Computing <span class="text-chainmail mx-2">|</span> &dagger;
         <span class="text-chainmail mx-2">|</span> Software Engineering &rang;
@@ -17,7 +14,7 @@
     </div>
   </div>
 
-  <!-- === 2. TRAJECTORY BRIEFING === -->
+  <!-- === TRAJECTORY BRIEFING === -->
   <div
     class="max-w-4xl mx-auto bg-armor-plate/30 border-l-2 border-rune-blue p-6 md:p-8 rounded-r-lg backdrop-blur-sm"
   >
@@ -35,92 +32,91 @@
     </p>
   </div>
 
-  <!-- === 3. THE SHIELD GRID === -->
+  <!-- === SHIELD GRID === -->
   <div
     class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto px-2 md:px-0 items-start"
   >
-    <!-- CARD: EDUCATION -->
-    <app-quantum-card title="Education" icon="†">
-      <div class="flex items-start gap-3">
-        <div class="mt-1 text-rune-blue">♦</div>
-        <div>
-          <div class="text-polished-silver font-bold">B.Sc. Computer Engineering</div>
-          <div class="text-xs text-chainmail uppercase tracking-wider">Expected Dec 2027</div>
-        </div>
+    <!-- CARD: ARSENAL -->
+    <app-quantum-card title="Arsenal" icon="⚔">
+      <div class="flex flex-wrap gap-2 mb-2">
+        <span class="tag-pill text-polished-silver border-rune-blue/30">Qiskit</span>
+        <span class="tag-pill">Go</span>
+        <span class="tag-pill">Angular</span>
+        <span class="text-xs text-chainmail self-center ml-1">+12 more</span>
       </div>
 
       <div details>
-        <div class="max-h-48 overflow-y-auto pr-2 space-y-4 mt-2">
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-4 mt-2">
           <div>
-            <div class="text-sm text-polished-silver font-semibold">Undergraduate Researcher</div>
-            <div class="text-xs text-chainmail">Scientific Initiation (2025 - Present)</div>
-            <p class="text-xs text-chainmail/80 mt-1">
-              "Quantum Neural Networks for Medical Imaging"
-            </p>
+            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">
+              Quantum Computing
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-pill">Qiskit (IBM)</span>
+              <span class="tag-pill">PennyLane</span>
+              <span class="tag-pill">CUDA-Q</span>
+              <span class="tag-pill">Stim</span>
+              <span class="tag-pill">PyQuil</span>
+            </div>
           </div>
           <div>
-            <div class="text-sm text-polished-silver font-semibold">Academic Exchange</div>
-            <div class="text-xs text-chainmail">Planned for 2026</div>
-            <p class="text-xs text-chainmail/80 mt-1">
-              Seeking placement in DACH region (Germany/Switzerland/Austria).
-            </p>
+            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">
+              Backend & Systems
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-pill">Go (Golang)</span>
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Node.js</span>
+              <span class="tag-pill">PostgreSQL</span>
+              <span class="tag-pill">Redis</span>
+              <span class="tag-pill">Docker</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">Frontend</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-pill">Angular</span>
+              <span class="tag-pill">Tailwind CSS</span>
+              <span class="tag-pill">TypeScript</span>
+              <span class="tag-pill">React</span>
+            </div>
           </div>
         </div>
       </div>
     </app-quantum-card>
 
-    <!-- CARD: CERTIFICATES -->
+    <!-- CARD: CERTIFICATIONS -->
     <app-quantum-card title="Certifications" icon="§">
-      <div class="flex items-start gap-3 mb-2">
-        <div class="mt-1 text-yellow-500">★</div>
-        <div>
-          <div class="text-polished-silver font-bold">IBM Quantum Developer</div>
-          <div class="text-xs text-chainmail">Certification Pending (Jan 2026)</div>
-        </div>
+      <!-- Visible: Highlighted Items Only -->
+      <div class="space-y-3 mb-2">
+        @for (cert of highlightedCerts(); track cert.title) {
+          <div class="flex items-start gap-3">
+            <div class="mt-1 text-sm" [class]="cert.iconColor">{{ cert.icon }}</div>
+            <div>
+              <div class="text-polished-silver font-bold">{{ cert.title }}</div>
+              <div class="text-xs text-chainmail">{{ cert.date }}</div>
+            </div>
+          </div>
+        }
       </div>
-      <div class="text-xs text-chainmail italic">+ 7 other certificates (Hover to view)</div>
 
+      <!-- Count hint -->
+      <div class="text-xs text-chainmail italic">
+        + {{ allCerts().length - highlightedCerts().length }} other certificates (Hover to view)
+      </div>
+
+      <!-- Details: Full Scrollable List -->
       <div details>
-        <div class="max-h-48 overflow-y-auto pr-2 space-y-3 mt-2">
-          <div class="flex gap-2">
-            <span class="text-rune-blue text-xs mt-0.5">►</span>
-            <div>
-              <div class="text-sm text-polished-silver">Qiskit Global Summer School</div>
-              <div class="text-xs text-chainmail">IBM Quantum • 2025 (Excellence)</div>
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-3 mt-2">
+          @for (cert of allCerts(); track cert.title) {
+            <div class="flex gap-2">
+              <span class="text-xs mt-0.5" [class]="cert.iconColor">{{ cert.icon }}</span>
+              <div>
+                <div class="text-sm text-polished-silver">{{ cert.title }}</div>
+                <div class="text-xs text-chainmail">{{ cert.issuer }} • {{ cert.date }}</div>
+              </div>
             </div>
-          </div>
-
-          <div class="flex gap-2">
-            <span class="text-rune-blue text-xs mt-0.5">►</span>
-            <div>
-              <div class="text-sm text-polished-silver">Qiskit Global Summer School</div>
-              <div class="text-xs text-chainmail">IBM Quantum • 2024 (Participation)</div>
-            </div>
-          </div>
-
-          <div class="flex gap-2">
-            <span class="text-chainmail text-xs mt-0.5">►</span>
-            <div>
-              <div class="text-sm text-polished-silver">Quantum Machine Learning</div>
-              <div class="text-xs text-chainmail">IBM Learning Badge • Advanced</div>
-            </div>
-          </div>
-
-          <div class="flex gap-2">
-            <span class="text-chainmail text-xs mt-0.5">►</span>
-            <div>
-              <div class="text-sm text-polished-silver">Qiskit Foundations</div>
-              <div class="text-xs text-chainmail">IBM Learning Badge • Intermediate</div>
-            </div>
-          </div>
-
-          <div class="flex gap-2">
-            <span class="text-chainmail text-xs mt-0.5">►</span>
-            <div>
-              <div class="text-sm text-polished-silver">Backend Engineering</div>
-              <div class="text-xs text-chainmail">Alura / Oracle ONE</div>
-            </div>
-          </div>
+          }
         </div>
       </div>
     </app-quantum-card>
@@ -139,27 +135,23 @@
       </div>
 
       <div details>
-        <div class="max-h-48 overflow-y-auto pr-2 space-y-2 mt-3">
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-2 mt-3">
           <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
             <span class="text-sm text-polished-silver">Portuguese</span>
             <span class="text-xs text-rune-blue">Native</span>
           </div>
-
           <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
             <span class="text-sm text-polished-silver">English</span>
             <span class="text-xs text-rune-blue">C1 (Advanced)</span>
           </div>
-
           <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
             <span class="text-sm text-polished-silver">Spanish</span>
             <span class="text-xs text-rune-blue">B2 (Advanced)</span>
           </div>
-
           <div class="flex justify-between items-center border-b border-chainmail/10 pb-1">
             <span class="text-sm text-polished-silver">German</span>
             <span class="text-xs text-yellow-500">A2 (Active Learner)</span>
           </div>
-
           <div
             class="flex justify-between items-center border-b border-chainmail/10 pb-1 opacity-75"
           >
@@ -170,61 +162,30 @@
       </div>
     </app-quantum-card>
 
-    <!-- CARD: ARSENAL -->
-    <app-quantum-card title="Arsenal" icon="⚔">
-      <div class="flex flex-wrap gap-2 mb-2">
-        <span
-          class="px-2 py-1 bg-void-navy border border-rune-blue/30 rounded text-xs text-polished-silver"
-          >Qiskit</span
-        >
-        <span
-          class="px-2 py-1 bg-void-navy border border-chainmail/20 rounded text-xs text-chainmail"
-          >Go</span
-        >
-        <span
-          class="px-2 py-1 bg-void-navy border border-chainmail/20 rounded text-xs text-chainmail"
-          >Angular</span
-        >
-        <span class="text-xs text-chainmail self-center ml-1">+12 more</span>
+    <!-- CARD: EDUCATION -->
+    <app-quantum-card title="Education" icon="†">
+      <div class="flex items-start gap-3">
+        <div class="mt-1 text-rune-blue">♦</div>
+        <div>
+          <div class="text-polished-silver font-bold">B.Sc. Computer Engineering</div>
+          <div class="text-xs text-chainmail uppercase tracking-wider">Expected Dec 2027</div>
+        </div>
       </div>
-
       <div details>
-        <div class="max-h-48 overflow-y-auto pr-2 space-y-4 mt-2">
+        <div class="max-h-48 overflow-y-auto pr-2 custom-scrollbar space-y-4 mt-2">
           <div>
-            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">
-              Quantum Computing
-            </h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag-pill">Qiskit (IBM)</span>
-              <span class="tag-pill">PennyLane (Xanadu)</span>
-              <span class="tag-pill">CUDA-Q (NVIDIA)</span>
-              <span class="tag-pill">Stim</span>
-              <span class="tag-pill">PyQuil</span>
-            </div>
+            <div class="text-sm text-polished-silver font-semibold">Undergraduate Researcher</div>
+            <div class="text-xs text-chainmail">Scientific Initiation (2025 - Present)</div>
+            <p class="text-xs text-chainmail/80 mt-1">
+              "Quantum Neural Networks for Medical Imaging"
+            </p>
           </div>
-
           <div>
-            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">
-              Backend & Systems
-            </h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag-pill">Go (Golang)</span>
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">Node.js</span>
-              <span class="tag-pill">PostgreSQL</span>
-              <span class="tag-pill">Redis</span>
-              <span class="tag-pill">Docker</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-xs font-tech text-rune-blue uppercase tracking-wider mb-2">Frontend</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag-pill">Angular</span>
-              <span class="tag-pill">Tailwind CSS</span>
-              <span class="tag-pill">TypeScript</span>
-              <span class="tag-pill">React</span>
-            </div>
+            <div class="text-sm text-polished-silver font-semibold">Academic Exchange</div>
+            <div class="text-xs text-chainmail">Planned for 2026</div>
+            <p class="text-xs text-chainmail/80 mt-1">
+              Seeking placement in DACH region (Germany/Switzerland/Austria).
+            </p>
           </div>
         </div>
       </div>
