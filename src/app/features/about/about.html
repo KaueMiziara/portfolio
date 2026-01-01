@@ -40,7 +40,7 @@
     class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto px-2 md:px-0 items-start"
   >
     <!-- CARD: ARSENAL -->
-    <app-quantum-card title="Skillset" icon="⚔">
+    <app-quantum-card title="Skillset" [attr.title]="null" icon="⚔">
       <div class="flex flex-wrap gap-2 mb-2">
         <span class="tag-pill text-polished-silver border-rune-blue/30">Qiskit</span>
         <span class="tag-pill">Go</span>
@@ -82,7 +82,7 @@
     </app-quantum-card>
 
     <!-- CARD: CERTIFICATIONS -->
-    <app-quantum-card title="Certifications" icon="§">
+    <app-quantum-card title="Certifications" [attr.title]="null" icon="§">
       <!-- Visible: Highlighted Items Only -->
       <div class="space-y-3 mb-2">
         @for (cert of highlightedCerts(); track cert.title) {
@@ -118,7 +118,7 @@
     </app-quantum-card>
 
     <!-- CARD: LANGUAGES -->
-    <app-quantum-card title="Languages" icon="¶">
+    <app-quantum-card title="Languages" [attr.title]="null" icon="¶">
       <div class="grid grid-cols-2 gap-2 text-sm">
         <div class="px-2 py-1 border border-chainmail/20 rounded bg-void-navy/30 text-center">
           <div class="text-polished-silver font-bold">Portuguese</div>
@@ -159,7 +159,7 @@
     </app-quantum-card>
 
     <!-- CARD: EDUCATION -->
-    <app-quantum-card title="Education" icon="†">
+    <app-quantum-card title="Education" [attr.title]="null" icon="†">
       <div class="flex items-start gap-3">
         <div class="mt-1 text-rune-blue">♦</div>
         <div>
