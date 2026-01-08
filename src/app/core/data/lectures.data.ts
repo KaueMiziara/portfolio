@@ -10,7 +10,7 @@ export const LECTURES_DATA: Project[] = [
       'Delivered two sessions on Variational Quantum Eigensolvers to both AI graduate and Computer Engineering students.',
     tags: ['Teaching', 'QML', 'Optimization', 'VQE', 'Qiskit'],
     details: `<p>Covered the mathematical foundations of the variational principle and guided students through implementing a VQE for a toy optimization problem.</p>`,
-    link: { text: 'Lecture Notes', url: 'https://github.com/KaueMiziara/qml-vqe-cqia-fiap-250920' },
+    link: { text: 'Lecture Notes', url: 'https://github.com/KaueMiziara/250919_VQE-lecture-notes' },
   },
   {
     id: 'quantum-basis',
