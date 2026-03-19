@@ -5,7 +5,7 @@ export const RESEARCH_DATA: Project[] = [
     id: 'qml-dementia-detection',
     title: 'Quantum Transfer Learning for Dementia Detection',
     type: 'R&D',
-    status: 'Planned',
+    status: 'Active',
     tags: ['PennyLane', 'Qiskit', 'Hybrid QNN', 'PyTorch', 'Medical Imaging'],
     summary:
       'Implementation of Hybrid Quantum-Classical Neural Networks to enhance dementia detection accuracy in MRI scans using the OASIS-2 dataset.',

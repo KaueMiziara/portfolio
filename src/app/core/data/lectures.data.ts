@@ -21,7 +21,7 @@ export const LECTURES_DATA: Project[] = [
       'Introduction to quantum computing concepts for Technical High School students in the Systems Development track.',
     tags: ['Outreach', 'High School', 'QML', 'Cryptography'],
     details: `<p>A conceptual overview of quantum mechanics without heavy math, focusing on interference and the potential of quantum computing to Machine Learning and Cryptography.</p>`,
-    link: { text: 'Check the Slides', url: '#' },
+    // link: { text: 'Check the Slides', url: '#' },
   },
   {
     id: 'rajesh-podcast',
