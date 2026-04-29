@@ -11,6 +11,14 @@ export const CERTIFICATIONS_DATA: Certification[] = [
   //   iconColor: 'text-yellow-500',
   // },
   {
+    title: 'Quantum Machine Learning',
+    issuer: 'IBM Quantum',
+    date: '2026 (Intermediate)',
+    type: 'Badge',
+    icon: '►',
+    iconColor: 'text-chainmail',
+  },
+  {
     title: 'Segunda Escuela Peruana de Computación Cuántica',
     issuer: 'Quantum Quipu',
     date: 'Dec 2025',
