@@ -5,7 +5,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'vqe-portfolio-optimization',
     title: 'Quantum Portfolio Optimization',
     type: 'Project',
-    status: 'Active',
+    status: 'On-hold',
     tags: ['Qiskit', 'VQE', 'Financial Modeling', 'QUBO', 'Python'],
     summary:
       'Application of the Variational Quantum Eigensolver (VQE) to solve Mean-Variance Portfolio Optimization problems using real historical data from the Brazilian Stock Exchange (B3).',
